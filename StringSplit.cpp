@@ -13,14 +13,24 @@
 #include<vector>
 #include<stringstream>
 #include<boost/algorithm/string.hpp>
-
+#include<boost/tokenizer.hpp>
+#include<boost/foreach.hpp>
 using namespace std;
-
+using namespace boost;
 // everyone likes boost
 vector<string> splitV4(string s){
 	vector<string> res;
 	boost::split( res, s, boost::is_any_of("\t ;,")); // delimiters
 	return res;
+}
+
+// another boost solution
+vector<string> splitV5(string s){
+	char_separator<char> sep('\t');
+	tokenizer<char_separator<char> > tokens(text, sep);
+	BOOST_FOREACH(string t, tokens){
+		cout<<t<<endl;
+	}
 }
 // all the follow solutions work for blank delimiter
 vector<string> splitV1(string s){
