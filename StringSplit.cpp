@@ -12,9 +12,17 @@
 #include<string>
 #include<vector>
 #include<stringstream>
+#include<boost/algorithm/string.hpp>
+
 using namespace std;
 
-// all these work for blank delimiter
+// everyone likes boost
+vector<string> splitV4(string s){
+	vector<string> res;
+	boost::split( res, s, boost::is_any_of("\t ;,")); // delimiters
+	return res;
+}
+// all the follow solutions work for blank delimiter
 vector<string> splitV1(string s){
 	istringstream iss(s);
 	vector<string> res;
