@@ -1,0 +1,43 @@
+/*************************************************************************
+    > File Name: StringSplit.cpp
+    > Author: Peng Zhang
+    > Mail: pengzhang_live@live.com 
+    > Created Time: 2014-11-28
+ ************************************************************************/
+/*
+ *	Split a string into tokens in C++
+ */
+#include<iostream>
+#include<string>
+#include<vector>
+#include<stringstream>
+using namespace std;
+
+// all these work for blank delimiter
+vector<string> splitV1(string s){
+	istringstream iss(s);
+	vector<string> res;
+	do{
+		string token;
+		iss >> token;
+		res.push_back(token);
+	}while(iss);
+	return res;
+}
+
+vector<string> splitV2(string s){
+	istringstream iss(s);
+	vector<string> res;
+	copy( istream_iterator<string>(iss), istream_iterator<string>(), back_inserter(res) );
+	return res;
+}
+
+//
+vector<string> splitV3(string s){
+	vector<string> res{ istream_iterator<string>{iss}, istream_iterator<string>{} };
+	return res;
+}
+
+int main(){
+}
+
