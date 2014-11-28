@@ -39,6 +39,8 @@ vector<string> splitV3(string s){
 	return res;
 }
 
-int main(){
+int main()
+{
+	return 0;
 }
 
