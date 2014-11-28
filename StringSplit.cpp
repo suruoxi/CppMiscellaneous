@@ -3,6 +3,7 @@
     > Author: Peng Zhang
     > Mail: pengzhang_live@live.com 
     > Created Time: 2014-11-28
+    > Source:  http://stackoverflow.com/questions/236129/split-a-string-in-c?page=1&tab=votes#tab-top
  ************************************************************************/
 /*
  *	Split a string into tokens in C++
