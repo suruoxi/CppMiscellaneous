@@ -1,2 +1,2 @@
-Learn C++
+Learn C++.
 Simple programs
