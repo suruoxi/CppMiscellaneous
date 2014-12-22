@@ -4,7 +4,8 @@
 	主要是考虑到多重继承
 */
 #include <iostream>
-
+#include <string.h>
+using namespace std;
 struct A {
     void foo() const {
         std::cout << "A's this:\t" << this << std::endl;
@@ -25,7 +26,7 @@ struct C : A, B
 void call_by_ptr(const C &obj, void (C::*mem_func)() const)
 {
     void *data[2];
-    std::memcpy(data, &mem_func, sizeof(mem_func));
+    memcpy(data, &mem_func, sizeof(mem_func));
     std::cout << "------------------------------\n"
         "Object ptr:\t" << &obj <<
         "\nFunction ptr:\t" << data[0] <<
